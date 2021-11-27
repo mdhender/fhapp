@@ -14,7 +14,7 @@ export default Base.extend({
         data.append("grant_type", "password");
         data.append("username", username);
         data.append("password", password);
-        let response = await fetch('http://localhost:8080/api/token', {
+        let response = await fetch('http://localhost:8080/auth/token', {
             method: 'POST',
             body: data
         });
