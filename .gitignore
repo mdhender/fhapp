@@ -1,0 +1,24 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+*~
+*.gz
+*.swp
+*.tar
+*.tgz
+*.Z
+/bower_components/
+/bower.json.ember-try
+/connect.lock
+/coverage/
+/dist/
+/.env*
+/.eslintcache
+/libpeerconnection.log
+/node_modules/
+/.node_modules.ember-try/
+/npm-debug.log*
+/package.json.ember-try
+/.pnp*
+/.sass-cache
+/testem.log
+/tmp/
+/yarn-error.log

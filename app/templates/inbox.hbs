@@ -1,0 +1,7 @@
+<NavBar />
+
+<ul>
+    {{#each @model as |message|}}
+        <li><Message @message={{message}} /></li>
+    {{/each}}
+</ul>
