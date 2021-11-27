@@ -6,7 +6,7 @@ export default class ApplicationAdapter extends JSONAPIAdapter {
   @service session;
 
   // Application specific overrides go here
-  host = 'http://localhost:8080/chi';
+  host = 'http://localhost:8080/api';
 
   @computed('session.data.authenticated.access_token')
   get headers() {
