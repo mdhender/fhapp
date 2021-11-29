@@ -2,21 +2,21 @@ import Base from 'ember-simple-auth/authenticators/base';
 
 export default Base.extend({
     async restore(data) {
-        let { access_token } = data;
-        if (access_token) {
+        console.log('authenticators', 'restore', data);
+        let { token } = data;
+        if (token) {
             return data;
         }
         throw 'no valid session data';
     },
 
     async authenticate(username, password) {
-        let data = new FormData();
-        data.append("grant_type", "password");
-        data.append("username", username);
-        data.append("password", password);
-        let response = await fetch('http://localhost:8080/auth/token', {
+        let headers = {};
+        headers['Content-type'] = 'application/json';
+        let response = await fetch('http://localhost:8080/auth/jwt', {
             method: 'POST',
-            body: data
+            headers: headers,
+            body: JSON.stringify({username, password})
         });
         if (response.ok) {
             return response.json();

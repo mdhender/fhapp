@@ -8,11 +8,11 @@ export default class ApplicationAdapter extends JSONAPIAdapter {
   // Application specific overrides go here
   host = 'http://localhost:8080/api';
 
-  @computed('session.data.authenticated.access_token')
+  @computed('session.data.authenticated.token')
   get headers() {
     let headers = {};
     if (this.session.isAuthenticated) {
-      headers['Authorization'] = 'Bearer ' + this.session.data.authenticated.access_token;
+      headers['Authorization'] = 'Bearer ' + this.session.data.authenticated.token
     }
     return headers;
   }
