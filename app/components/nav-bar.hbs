@@ -1,7 +1,7 @@
 <nav>
   <LinkTo @route="index">Home</LinkTo>
   <LinkTo @route="inbox">Inbox</LinkTo>
-  {{#if session.isAuthenticated}}
+  {{#if this.session.isAuthenticated}}
     <button type="button" {{on "click" this.logout}}>Logout</button>
   {{/if}}
 </nav>
